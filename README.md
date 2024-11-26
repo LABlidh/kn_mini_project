@@ -49,13 +49,11 @@ Line format: `<Fact-URI> <prop-URI> "value"^^type .`<br>
 
 ### Example for In- and Output
 Input line: <br>
-<pre> 
 `<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .`<br>
 `<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://rdf.freebase.com/ns/m.0bmssv> .`<br>
 `<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://rdf.freebase.com/ns/film.film.featured_film_locations> .`<br>
 `<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://rdf.freebase.com/ns/m.080h2> .`<br>
 `<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
-</pre> 
 Output line: `<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue>"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
 
 ## Guid 
