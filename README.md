@@ -32,7 +32,7 @@ Like Training data? So a .nt-File?<br>
 ### Output (Result) File Format
 File ending .ttl (e.g., result.ttl)<br>
 One line for each of the facts in the input file<br>
-Line format: <Fact-URI> <prop-URI> "value"^^type .<br>
+Line format: `<Fact-URI> <prop-URI> "value"^^type .`<br>
 | **Field**    | **Description**                                                                                      |
 |--------------|------------------------------------------------------------------------------------------------------|
 | `<Fact-URI>` | URI of the rdf:Statement (`<http://dice-research.org/data/fb15k-237.ttl#0>`, `<http://swc2017.aksw.org/task2/dataset/3892429>`) |
@@ -40,12 +40,10 @@ Line format: <Fact-URI> <prop-URI> "value"^^type .<br>
 | `value`      | result of the fact checking algorithm (datatype: double)                                             |
 | `type`       | Type of the value, always `<http://www.w3.org/2001/XMLSchema#double>`                                |
 
-
-
 #### Example
-<http://swc2017.aksw.org/task2/dataset/3892429>
- <http://swc2017.aksw.org/hasTruthValue>
- "0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .
+`<http://swc2017.aksw.org/task2/dataset/3892429>`
+ `<http://swc2017.aksw.org/hasTruthValue>`
+ `"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`
 
 The predicate is always the same. <- What do they mean by that?
 
