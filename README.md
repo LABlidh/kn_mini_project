@@ -27,7 +27,11 @@ data\classHierarchy.nt<br>
 
 ## In- and Output File of the System
 ### Input File Format
-Like Training data? So a .nt-File?<br>
+Here I am unsure, is it like for Example the training data?
+I assume it: 
+File ending .nt<br>
+One line for each fact<br>
+Line format: `<Fact-URI> <prop-URI> "value"^^type .`<br>
 
 ### Output (Result) File Format
 File ending .ttl (e.g., result.ttl)<br>
@@ -38,18 +42,21 @@ Line format: `<Fact-URI> <prop-URI> "value"^^type .`<br>
 | `<Fact-URI>` | URI of the rdf:Statement (`<http://dice-research.org/data/fb15k-237.ttl#0>`, `<http://swc2017.aksw.org/task2/dataset/3892429>`) |
 | `<prop-URI>` | always `<http://swc2017.aksw.org/hasTruthValue>`                                                     |
 | `value`      | result of the fact checking algorithm (datatype: double)                                             |
-| `type`       | Type of the value, always `<http://www.w3.org/2001/XMLSchema#double>`                                |
+| `type`       | always `<http://www.w3.org/2001/XMLSchema#double>` (Type of the value)                               |
 
 #### Example
-`<http://swc2017.aksw.org/task2/dataset/3892429>`
- `<http://swc2017.aksw.org/hasTruthValue>`
- `"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`
-
-The predicate is always the same. <- What do they mean by that?
+`<http://swc2017.aksw.org/task2/dataset/3892429><http://swc2017.aksw.org/hasTruthValue>"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`
 
 ### Example for In- and Output
-Input line: 
-Output line: 
+Input line: <br>
+<pre> 
+`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .`<br>
+`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://rdf.freebase.com/ns/m.0bmssv> .`<br>
+`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://rdf.freebase.com/ns/film.film.featured_film_locations> .`<br>
+`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://rdf.freebase.com/ns/m.080h2> .`<br>
+`<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
+</pre> 
+Output line: `<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue>"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
 
 ## Guid 
 1. Install Python (https://www.python.org/).
