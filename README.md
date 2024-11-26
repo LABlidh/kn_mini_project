@@ -54,6 +54,7 @@ Line format: `<Fact-URI> <prop-URI> "value"^^type .`<br>
 | `<prop-URI>` | always `<http://swc2017.aksw.org/hasTruthValue>` (Type of relationship)                              |
 | `value`      | result of the fact checking algorithm (datatype: double)                                             |
 | `type`       | always `<http://www.w3.org/2001/XMLSchema#double>` (Type of the value)                               |
+
 Example: <br>
 `<http://swc2017.aksw.org/task2/dataset/3892429><http://swc2017.aksw.org/hasTruthValue>"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`
 
