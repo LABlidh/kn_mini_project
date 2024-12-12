@@ -18,3 +18,8 @@ Weekly updates are scheduled for Thursdays at 12 o'clock
 - [ ] Read https://papers.dice-research.org/2022/ISWC_HybridFC/public.pdf 
 - [ ] Look at SPARQL
 - [ ] Think about how to approach the project
+
+
+https://www.youtube.com/watch?v=Kl1EXojMW_c
+minute 37:56
+Graph-Based

@@ -1,0 +1,6 @@
+<http://dice-research.org/data/fb15k-237.ttl#23> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#3> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#13> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#25> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#18> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#5> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .

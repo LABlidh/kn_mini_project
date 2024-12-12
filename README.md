@@ -88,3 +88,4 @@ pip install matplotlib
 pip install networkx
 pip install scipy
 pip install scipy
+pip install rdflib SPARQLWrapper
