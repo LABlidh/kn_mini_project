@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <http://dice-research.org/data/fb15k-237.ttl#3> <http://swc2017.aksw.org/hasTruthValue> "5.113320366945118e-05"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://dice-research.org/data/fb15k-237.ttl#5> <http://swc2017.aksw.org/hasTruthValue> "0.991407573223114"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://dice-research.org/data/fb15k-237.ttl#13> <http://swc2017.aksw.org/hasTruthValue> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
@@ -498,3 +499,11 @@
 <http://dice-research.org/data/fb15k-237.ttl#1497> <http://swc2017.aksw.org/hasTruthValue> "0.0002900137042161077"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://dice-research.org/data/fb15k-237.ttl#1498> <http://swc2017.aksw.org/hasTruthValue> "0.0026447477284818888"^^<http://www.w3.org/2001/XMLSchema#double> .
 <http://dice-research.org/data/fb15k-237.ttl#1499> <http://swc2017.aksw.org/hasTruthValue> "0.9855868816375732"^^<http://www.w3.org/2001/XMLSchema#double> .
+=======
+<http://dice-research.org/data/fb15k-237.ttl#23> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#3> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#13> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#25> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#18> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://dice-research.org/data/fb15k-237.ttl#5> <http://swc2017.aksw.org/hasTruthValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#double> .
+>>>>>>> ea55782 (fact checking start)
