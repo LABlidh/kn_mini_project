@@ -47,6 +47,14 @@ Follow these steps to set up and run the fact-checking engine:
     ```
     This might take some minutes; if it takes too long, consider decreasing the number of epochs (variable: num_epochs).
 
+    Use a Pretrained Model or Train a New One
+
+         1. Faster Computation with Pretrained Model:
+         If you want faster computation, the script will use the pretrained model (transE_model.pkl) if it exists in the same directory.
+
+         2. Train the Model Yourself
+         If you want to train the model from scratch, delete the "transE_model.pkl" and run the notebook.
+
 10. The result file is then saved in the unzipped folder as "result.ttl".
 
 ## Result
