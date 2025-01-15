@@ -46,13 +46,7 @@ Follow these steps to set up and run the fact-checking engine:
      ```
      If there are errors, these are the libraries needed: 
       ```bash
-      pip install jupyter
-      pip install rdflib
-      pip install pandas
-      pip install numpy
-      pip install torch
-      pip install scikit-learn
-      pip install pykeen
+      pip install jupyter rdflib pandas numpy torch scikit-learn pykeen
       ```
 
 10. Run all cells in a Jupyter Notebook. There are different ways to do this, for example, from the terminal: 
