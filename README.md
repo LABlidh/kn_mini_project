@@ -1,91 +1,64 @@
-# Fact-checking engine using SPARQL in Python
+# Fact-Checking Engine 
 
-## Goal
-Build a fact-checking engine which returns a veracity value between 0 (fact is false) and +1 (fact is true) for a given fact with respect to a knowledge graph.<br> 
-Apply approaches to real data.<br>
-Make use of Semantic Web technologies for a challenging problem.<br>
-The veracity value can be any value in the range [0, 1] in case a system is unsure whether a fact is really true or not.<br>
-Please do not wait for a lecture that covers this particular task. <br>
-The lecture will give you several tools but you need to combine them to create a fact-checking algorithm.
+## Instructions
 
-## Data
-### Reference knowledge graph
-Available as dump file (data\reference-kg.nt)<br>
-Available as SPARQL endpoint (https://fokgsw.data.dice-research.org/sparql) (the graph has the IRI https://dice-research.org/students/teaching/fokgsw)<br>
+Follow these steps to set up and run the fact-checking engine:
 
-### Training data 
-data\fokg-sw-train-2024.nt<br>
-RDF statements (we used reification)<br>
-The statements have a veracity value assigned (0 or 1).<br>
+1. Download the Zip File:
+   - Go to the repository on GitHub: https://github.com/LABlidh/kn_mini_project
+   - Click on the "Code" button
+   - Select "Download ZIP"
 
-### Test data 
-data\fokg-sw-test-2024.nt<br>
-comprise RDF statements (we used reification)<br>
+2. Unzip the folder.
 
-### Class hierarchy 
-data\classHierarchy.nt<br>
+3. Change the test data path:
+   - Open the Jupyter Notebook file (fact_checker_TransE.ipynb) in the unzipped folder using an IDE of your choice. We recommend Visual Studio Code.
+   - In the first cell, you will find a constant that holds the path to a test data file. Change this path accordingly. We recommend placing the test data file in the data folder within the unzipped directory and using a relative path.
 
-## In- and Output File of the System
-### Input File Format
-Here I am unsure, is it like for Example the training data? I assume it: 
-File ending .nt<br>
-One line for each fact<br>
-Line format: <br>
-`<Fact-URI> <URI for type>          <URI for type rdf:Statement> .`<- Indicates that it is a statement in the RDF format<br>
-`<Fact-URI> <URI for subject>       <URI for the subject> .`<- The statements subject, what it is about<br>
-`<Fact-URI> <URI for predicate>     <URI for the predicate> .`<- Indicates the relationship between the subject and the object<br>
-`<Fact-URI> <URI for object>        <URI for the object> .`<- Indicates what the subject is related to<br>
-`<Fact-URI> <URI for hasTruthValue>    "value"^^<type-URI for double> .`<- Indicates the truth value <br>
+4. Open the terminal in the unzipped folder.
 
-Example: <br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://rdf.freebase.com/ns/m.0bmssv> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://rdf.freebase.com/ns/film.film.featured_film_locations> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://rdf.freebase.com/ns/m.080h2> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
+5. Install Python and pip (if not already installed):
+   - Python: Download and install from https://www.python.org/downloads/
+   - pip: Usually comes with Python. If not, follow instructions from https://pip.pypa.io/en/stable/installation/
 
-### Output (Result) File Format
-File ending .ttl (e.g., result.ttl)<br>
-One line for each of the facts in the input file<br>
-Line format: `<Fact-URI> <prop-URI> "value"^^type .`<br>
-| **Field**    | **Description**                                                                                      |
-|--------------|------------------------------------------------------------------------------------------------------|
-| `<Fact-URI>` | URI of the rdf:Statement (`<http://dice-research.org/data/fb15k-237.ttl#0>`, `<http://swc2017.aksw.org/task2/dataset/3892429>`) |
-| `<prop-URI>` | always `<http://swc2017.aksw.org/hasTruthValue>` (Type of relationship)                              |
-| `value`      | result of the fact checking algorithm (datatype: double)                                             |
-| `type`       | always `<http://www.w3.org/2001/XMLSchema#double>` (Type of the value)                               |
+6. Create a virtual environment:
+   ```bash
+    python -m venv venv
+    ```
 
-Example: <br>
-`<http://swc2017.aksw.org/task2/dataset/3892429><http://swc2017.aksw.org/hasTruthValue>"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`
+7. Activate the virtual environment:
+   - On MacOS/Linux, run:
+     ```bash
+     source venv/bin/activate
+     ```
+   - On Windows, run:
+     ```bash
+     .\venv\Scripts\activate
+     ```
 
-### Example for In- and Output
-Input line: <br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://rdf.freebase.com/ns/m.0bmssv> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://rdf.freebase.com/ns/film.film.featured_film_locations> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://rdf.freebase.com/ns/m.080h2> .`<br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue> "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
-Output line: <br>
-`<http://dice-research.org/data/fb15k-237.ttl#0> <http://swc2017.aksw.org/hasTruthValue>"0.8901"^^<http://www.w3.org/2001/XMLSchema#double> .`<br>
+8. Install dependencies:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+9. Run all cells in a Jupyter Notebook. There are different ways to do this, for example, from the terminal: 
+    ```bash 
+        jupyter nbconvert --to notebook --execute fact_checker_TransE.ipynb --output fact_checker_TransE.ipynb 
+    ```
+    This might take some minutes; if it takes too long, consider decreasing the number of epochs (variable: num_epochs).
+
+10. The result file is then saved in the unzipped folder as "result.ttl".
+
+## Result
+The result of the provdided test data was evaluated by the GERBIL platform. It atchived a Area Under Curve (AUC) of *0,754* for the submited ROC curve. So the criteria of achieving a Roc AUC above 0.6 in GERBIL on the test dataset was readed. See: https://gerbil-kbc.aksw.org/gerbil/experiment?id=202501140016 
+
+![GERBIL Experiment run on result.ttl](GERBIL_ss.png)
 
 ## Contact
-Umair Qudus: 	uqudus@mail.uni-paderborn.de <br>
-Yasir Mahmood: 	ymahmood@mail.uni-paderborn.de
+rohini.maity@outlook.com <br>
+lea.blidh@googlemail.com
 
-## Evaluate
-To be written later
-
-## Suggested steps 
-1. Analyse the given training data 
-2. Check how you can make use of the given knowledge base 
-3. Fact Checking and Benchmarking 
-4. Final submission: January 15th, 2025
-
-## Guid 
-1. Install Python (https://www.python.org/).
-2. Install libary SPARQLWrapper for querying the SPARQL endpoint (pip install rdflib SPARQLWrapper).
-pip install matplotlib
-pip install networkx
-pip install scipy
-pip install scipy
-pip install rdflib SPARQLWrapper
+## Group 
+Rohini Maity <br>
+Lea Alexandra Blidh <br>
+Akshaya Nair
