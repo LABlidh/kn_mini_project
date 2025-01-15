@@ -55,6 +55,11 @@ Follow these steps to set up and run the fact-checking engine:
 
 ## Result
 The result of the provdided test data was evaluated by the GERBIL platform. It atchived a Area Under Curve (AUC) of *0,754* for the submited ROC curve. So the criteria of achieving a Roc AUC above 0.6 in GERBIL on the test dataset was readed. See: https://gerbil-kbc.aksw.org/gerbil/experiment?id=202501140016 
+<br>
+Submitted in GERBIL with these credentials:<br>
+GERBIL <br>
+Rohini Maity <br>
+rohini.maity@outlook.com <br> 
 
 ![GERBIL Experiment run on result.ttl](GERBIL_ss.png)
 
