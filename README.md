@@ -48,6 +48,8 @@ Follow these steps to set up and run the fact-checking engine:
       ```bash
       pip install jupyter rdflib pandas numpy torch scikit-learn pykeen
       ```
+   
+   (If using Visual Studio Code Terminal, we recommend restarting it and activate the environment before proceeding to the next step.)
 
 10. Run all cells in a Jupyter Notebook. There are different ways to do this, for example, from the terminal: 
       ```bash 
