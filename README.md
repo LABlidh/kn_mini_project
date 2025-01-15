@@ -21,11 +21,11 @@ Follow these steps to set up and run the fact-checking engine:
 
 5. Open the terminal in the unzipped folder.
 
-6. Install Python and pip (if not already installed):
+6. Install Python and pip (if not already installed)(we used Python 3.10 and pip 24.2 or Python 3.12.0 and pip 23.2.1):
    - Python: Download and install from https://www.python.org/downloads/
    - pip: Usually comes with Python. If not, follow instructions from https://pip.pypa.io/en/stable/installation/
 
-7. Create a virtual environment:
+7. Create a virtual environment: 
    ```bash
     python -m venv venv
     ```
@@ -44,12 +44,16 @@ Follow these steps to set up and run the fact-checking engine:
      ```bash
      pip install -r requirements.txt
      ```
+     If there are errors, these are the libraries needed: 
+      ```bash
+      pip install jupyter rdflib pandas numpy torch scikit-learn pykeen
+      ```
 
 10. Run all cells in a Jupyter Notebook. There are different ways to do this, for example, from the terminal: 
-    ```bash 
-        jupyter nbconvert --to notebook --execute fact_checker.ipynb --output fact_checker.ipynb 
-    ```
-    This might take some minutes; if it takes too long, consider decreasing the number of epochs (variable: num_epochs).
+      ```bash 
+      jupyter nbconvert --to notebook --execute fact_checker.ipynb --output fact_checker.ipynb 
+      ```
+      This might take some minutes; if it takes too long, consider decreasing the number of epochs (variable: num_epochs).
 
 11. The result file is then saved in the unzipped folder as "result.ttl".
 
