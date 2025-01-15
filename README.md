@@ -50,9 +50,9 @@ Follow these steps to set up and run the fact-checking engine:
       ```
 
 10. Run all cells in a Jupyter Notebook. There are different ways to do this, for example, from the terminal: 
-   ```bash 
-   jupyter nbconvert --to notebook --execute fact_checker.ipynb --output fact_checker.ipynb 
-   ```
+      ```bash 
+      jupyter nbconvert --to notebook --execute fact_checker.ipynb --output fact_checker.ipynb 
+      ```
    This might take some minutes; if it takes too long, consider decreasing the number of epochs (variable: num_epochs).
 
 11. The result file is then saved in the unzipped folder as "result.ttl".
