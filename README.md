@@ -21,9 +21,9 @@ Follow these steps to set up and run the fact-checking engine:
 
 5. Open the terminal in the unzipped folder.
 
-6. Install Python and pip (if not already installed):
-   - Python (>=3.10): Download and install from https://www.python.org/downloads/
-   - pip (>=23.2.1): Usually comes with Python. If not, follow instructions from https://pip.pypa.io/en/stable/installation/
+6. Install Python and pip (if not already installed)(we used Python 3.12.0 and pip 23.2.1 or Python 3.10 and pip 24.2):
+   - Python: Download and install from https://www.python.org/downloads/
+   - pip: Usually comes with Python. If not, follow instructions from https://pip.pypa.io/en/stable/installation/
 
 7. Create a virtual environment: 
    ```bash
@@ -44,6 +44,7 @@ Follow these steps to set up and run the fact-checking engine:
      ```bash
      pip install -r requirements.txt
      ```
+     If there are errors, these are the libories needed: rdflib, pandas, torch, scikit-learn, pykeen
 
 10. Run all cells in a Jupyter Notebook. There are different ways to do this, for example, from the terminal: 
     ```bash 
