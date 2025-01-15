@@ -22,8 +22,8 @@ Follow these steps to set up and run the fact-checking engine:
 5. Open the terminal in the unzipped folder.
 
 6. Install Python and pip (if not already installed):
-   - Python (>=3.10): Download and install from https://www.python.org/downloads/
-   - pip (>=23.2.1): Usually comes with Python. If not, follow instructions from https://pip.pypa.io/en/stable/installation/
+   - Python (3.10): Download and install from https://www.python.org/downloads/
+   - pip (24.2): Usually comes with Python. If not, follow instructions from https://pip.pypa.io/en/stable/installation/
 
 7. Create a virtual environment: 
    ```bash
